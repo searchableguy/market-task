@@ -96,7 +96,7 @@ function TableRow({ asset, borrowLimit, borrowedAmount }: TableRowProps) {
   if (asset.type === "supplied") {
     const { ltv } = token;
     const value = (100 * borrowedAmount) / ltv;
-    liqPrice = value;
+    liqPrice = value / asset.amount;
   }
 
   if (asset.type === "borrowed") {
